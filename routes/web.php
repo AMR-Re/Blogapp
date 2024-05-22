@@ -26,6 +26,9 @@ Route::get('/blog', function () {
 Route::get('/blog-details', function () {
     return view('frontend.blog-details');
 });
+Route::get('/portfolio-details', function () {
+    return view('frontend.portfolio-details');
+});
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
