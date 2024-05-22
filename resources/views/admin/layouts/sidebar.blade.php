@@ -47,10 +47,12 @@
           </ul>
         </li>
         <li class="menu-header">Sections</li>
-        <li class="nav-item dropdown @if( Request::segment(2)=='hero') active @endif">
+        <li class="nav-item dropdown @if( Request::segment(2)=='hero'||'typer-title') active @endif">
           <a href="#" class="nav-link has-dropdown " data-toggle="dropdown">
             <i class="fa fa-flask"></i> <span>Hero</span></a>
           <ul class="dropdown-menu" style="display: none;">
+
+            <li><a class="nav-link" href="{{route('admin.typer-title.index')}}">Typer Title</a></li>
             <li><a class="nav-link" href="{{route('admin.hero.index')}}">Hero Section</a></li>
 
         {{-- <li>
