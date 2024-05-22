@@ -48,8 +48,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright">
-                        <p>Copyright 2023 <span>Rabins</span>. All Rights Reserved.</p>
-                        <p>Powered by WebSolutionUS &nbsp; | &nbsp; 2022 - 2023</p>
+                        
+                        @php
+                        $currentYear = date('Y');
+                        $nextYear = $currentYear + 1;
+                        @endphp
+                        <p>Copyright {{date('Y')}} <span>Amr</span>. All Rights Reserved.</p>
+                        <p>Powered by ShahbaTech &nbsp; | &nbsp; {{$currentYear}}-{{$nextYear}}</p>
                     </div>
                 </div>
             </div>

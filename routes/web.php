@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
+Route::get('/blog', function () {
+    return view('frontend.blog');
+});
+
+Route::get('/blog-details', function () {
+    return view('frontend.blog-details');
+});
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
