@@ -36,7 +36,7 @@
     </div>
     <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
-        <li class="nav-item active">
+        <li class="nav-item @if( Request::segment(1)=='dashboard') active @endif">
           <a href="index.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
         <li class="nav-item dropdown">
@@ -46,17 +46,20 @@
 
           </ul>
         </li>
-        <li class="menu-header">Starter</li>
+        <li class="menu-header">Sections</li>
+        <li class="nav-item dropdown @if( Request::segment(2)=='hero') active @endif">
+          <a href="#" class="nav-link has-dropdown " data-toggle="dropdown">
+            <i class="fa fa-flask"></i> <span>Hero</span></a>
+          <ul class="dropdown-menu" style="display: none;">
+            <li><a class="nav-link" href="{{route('admin.hero.index')}}">Hero Section</a></li>
 
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-        <li><a class="nav-link" href="features-post-create.html"><i class="far fa-square"></i> <span>Form Page</span></a></li>
-
-        <li><a class="nav-link" href="features-profile.html"><i class="far fa-square"></i> <span>Profile</span></a></li>
-
-        <li><a class="nav-link" href="auth-login.html"><i class="far fa-square"></i> <span>Login</span></a></li>
-        <li><a class="nav-link" href="auth-register.html"><i class="far fa-square"></i> <span>Register</span></a></li>
-        <li><a class="nav-link" href="auth-forgot-password.html"><i class="far fa-square"></i> <span>Forgot password</span></a></li>
-
+        {{-- <li>
+          <a class="nav-link" href="blank.html">
+            <i class="far fa-square">
+              </i> <span>Blank Page</span>
+          </a>
+        </li> --}}
+       
       </ul>
   </aside>
 </div>

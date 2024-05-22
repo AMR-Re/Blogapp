@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="{{url('assets/css/plugins/bootstrap-timepicker.min.css')}}">
   <link rel="stylesheet" href="{{url('assets/css/plugins/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{url('assets/css/plugins/select2.min.css')}}">
+  <link rel="stylesheet" href="{{url('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css')}}">
+
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
@@ -57,6 +59,9 @@
   <script src="{{url('assets/js/plugins/bootstrap-timepicker.min.js')}}"></script>
   <script src="{{url('assets/js/plugins/daterangepicker.js')}}"></script>
   <script src="{{url('assets/js/plugins/select2.full.min.js')}}"></script>
+  <script src="{{url('assets/js/plugins/summernote-bs4.js')}}"></script>
+  <script src="{{url('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js')}}"></script>
+
 
 
   <!-- Template JS File -->
@@ -67,6 +72,15 @@
   <script src="{{url('assets/js/page/features-post-create.js')}}"></script>
   <!-- Page Specific JS File -->
   <script src="{{url('assets/js/page/forms-advanced-forms.js')}}"></script>
+
+   <!--Page Specific JS File -->
+   <script>
+      @if(!empty($errors->all()))
+        @foreach($errors->all() as $error)
+        toastr.error("{{$error}}")
+        @endforeach    
+        @endif
+  </script>
 </body>
 </html>
 
