@@ -293,7 +293,7 @@ Button-Styles
 .header-area {
     padding-top: 320px;
     padding-bottom: 210px;
-    background: url('../images/logo-white.png') no-repeat scroll top center/cover;
+    /* background: url('../images/logo-white.png') no-repeat scroll top center/cover; */
     position: relative;
     z-index: 1;
     overflow: hidden;

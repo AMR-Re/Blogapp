@@ -1,4 +1,4 @@
-<header class="header-area parallax-bg" id="home-page" style="background: url({{$hero->bg_image}})">
+<header class="header-area parallax-bg" id="home-page" style="background: url({{$hero->bg_image}}) center/cover">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
