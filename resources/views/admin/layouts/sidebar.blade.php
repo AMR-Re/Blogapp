@@ -65,6 +65,8 @@
           
           
       <li class=" @if( Request::segment(2)=='service') active @endif"><a class="nav-link" href="{{route('admin.service.index')}}"><i class="fas fa-wind"></i><span>Services</span></a></li>       
-      </ul>
+      <li class=" @if( Request::segment(2)=='about') active @endif"><a class="nav-link" href="{{route('admin.about.index')}}"><i class="fas fa-wind"></i><span>About</span></a></li>       
+   
+    </ul>
   </aside>
 </div>
