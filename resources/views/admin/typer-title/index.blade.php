@@ -21,11 +21,7 @@
                 <div class="card-header-action">
                     <a href="{{route('admin.typer-title.create')}}" class="btn btn-success">Add Title <i class="fas fa-anchor"></i> </a>
                 </div>
-                {{-- <div class="list">
-                    @foreach($titles as $title)
-                    <li>{{$title->title}}</li>
-                    @endforeach
-                </div> --}}
+             
               </div>
               <div class="card-body">
                 {{ $dataTable->table() }}

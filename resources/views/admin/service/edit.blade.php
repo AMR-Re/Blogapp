@@ -20,7 +20,7 @@
                 <h4>Edit Name:</h4>
               </div>
               <div class="card-body">
-                <form action="{{route('admin.description.update',$service->id)}}" method="POST" >
+                <form action="{{route('admin.service.update',$service->id)}}" method="POST" >
                     @csrf
                     @method('PUT')
                    <div class="form-group row mb-4">

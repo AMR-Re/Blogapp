@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index(ServiceDataTable $dataTable)
     {
-        return $dataTable->render('admin.services.index');
+        return $dataTable->render('admin.service.index');
     }
 
     /**
@@ -22,7 +22,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        return view('admin.service.create');
     }
 
     /**
@@ -88,6 +88,7 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $title=Service::findOrFail($id);
+        $title->delete();
     }
 }
