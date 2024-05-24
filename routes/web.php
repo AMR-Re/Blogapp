@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -45,6 +46,14 @@ Route::resource('typer-title',TyperTitleController::class);
 Route::resource('service',ServiceController::class);
 Route::get('resume/download', [AboutController::class, 'resumeDownload'])->name('resume.download');
 
+
+Route::resource('category', CategoryController::class);
+
+/** Portfolio Item Route */
+// Route::resource('portfolio-item', PortfolioItemController::class);
+
+// /** Portfolio Section Setting Route */
+// Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
 Route::resource('about',AboutController::class);
 
 

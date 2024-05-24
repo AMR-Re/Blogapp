@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Category;
 use App\Models\Hero;
 use App\Models\Service;
 use App\Models\TyperTitle;
@@ -19,8 +20,11 @@ class HomeController extends Controller
         $hero=Hero::first();
         $services = Service::all();
         $about = About::first();
+        $portfolioCategories = Category::all();
+
+
         $typerTitles=TyperTitle::all();
-        return view('frontend.home',compact('hero','typerTitles','services','about'));
+        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories'));
     }
 
     /**

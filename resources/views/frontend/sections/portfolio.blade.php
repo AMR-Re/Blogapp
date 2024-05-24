@@ -14,12 +14,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="filter-menu">
-                    <li class="active" data-filter="*">All Projects</li>
-                    <li data-filter=".branding">Branding Design</li>
-                    <li data-filter=".interface">User Interface</li>
-                    <li data-filter=".experience">User Experience</li>
-                    <li data-filter=".development">Web Development</li>
-                </ul>
+                    @foreach ($portfolioCategories as $category)
+                    <li data-filter=".{{$category->slug}}">{{$category->name}}</li>
+                    @endforeach
+                    </ul>
             </div>
         </div>
         <div class="portfolio-wrapper">
