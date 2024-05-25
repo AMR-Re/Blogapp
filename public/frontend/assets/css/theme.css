@@ -455,12 +455,33 @@ Button-Styles
     -ms-transition: 0.3s;
 }
 
-.filter-menu li:hover,
+.filter-menu li:hover 
 .filter-menu li.active {
     background: #ff885e;
     color: #fff;
 }
-
+/* Media query for mobile devices (adjust width as needed) */
+@media (min-width: 320px ) and (max-width: 768px) {
+    .filter-menu {
+      margin: 0 auto; /* Center the menu on mobile */
+    }
+  
+    .filter-menu li {
+      display: flex; /* Stack items vertically on mobile */
+      width: 100%; /* Ensure full width on mobile */
+      margin-bottom: 10px; /* Add spacing between items */
+      text-align: center; /* Maintain center alignment */
+      
+    }
+ 
+  
+  /* Touch-friendly hover effect (optional) */
+  .filter-menu li:active,
+  .filter-menu li:focus { /* Include focus for keyboard accessibility */
+    background: #ff885e;
+    color: #fff;
+  }
+}
 .portfolio-wrapper {
     margin-bottom: -30px;
 }

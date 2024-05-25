@@ -1,38 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\About;
-use App\Models\Category;
-use App\Models\Hero;
-use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
-use App\Models\Service;
-use App\Models\TyperTitle;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class PortfolioSectionSettingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $hero=Hero::first();
-        $services = Service::all();
-        $about = About::first();
-        $portfolioTitle = PortfolioSectionSetting::first();
-        $portfolioCategories = Category::all();
-        $portfolioItems = PortfolioItem::all();
+        $portfolio=PortfolioSectionSetting::first();
+       return view('admin.portfolio-setting.index',compact('portfolio'));
+    }
 
-        $typerTitles=TyperTitle::all();
-        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories','portfolioItems','portfolioTitle'));
-    }
-    public function showPortfolio($id){
-        $portfolio = PortfolioItem::findOrFail($id);
-        return view('frontend.portfolio-details', compact('portfolio'));
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -70,7 +54,22 @@ class HomeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'max:200'],
+            'sub_title' => ['required', 'max:500']
+        ]);
+
+        PortfolioSectionSetting::updateOrCreate(
+            ['id' => $id],
+            [
+                'title' => $request->title,
+                'sub_title' => $request->sub_title,
+            ]
+        );
+
+        toastr()->success('Updated Successfully', 'Congrats');
+
+        return redirect()->back();
     }
 
     /**

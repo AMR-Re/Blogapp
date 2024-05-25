@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\PortfolioItem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use function Ramsey\Uuid\v1;
 
@@ -46,7 +47,7 @@ class CategoryController extends Controller
 
         $category = new Category();
         $category->name = $request->name;
-        $category->slug = \Str::slug($request->name);
+        $category->slug = Str::slug($request->name);
         $category->save();
 
         toastr()->success('Category Created Successfully!');
@@ -93,7 +94,7 @@ class CategoryController extends Controller
 
         $category = Category::findOrFail($id);
         $category->name = $request->name;
-        $category->slug = \Str::slug($request->name);
+        $category->slug = Str::slug($request->name);
         $category->save();
 
         toastr()->success('Category Updated Successfully!');
@@ -109,14 +110,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-    //     $category = Category::findOrFail($id);
-    //     // $hasItem = PortfolioItem::where('category_id', $category->id)->count();
-    //     if($hasItem == 0){
-    //         $category->delete();
-    //         return true;
-    //     }
+        $category = Category::findOrFail($id);
+        $hasItem = PortfolioItem::where('category_id', $category->id)->count();
+        if($hasItem == 0){
+            $category->delete();
+            return true;
+        }
 
-    //     return response(['status' => 'error']);
-    // 
+        return response(['status' => 'error']);
+    
 }
 }
