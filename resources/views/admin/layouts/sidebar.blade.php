@@ -78,6 +78,7 @@
           <li class="{{setSidebarActive(['admin.skill-section-setting.*'])}}"><a class="nav-link" href="{{route('admin.skill-section-setting.index')}}">Section Setting</a></li>
         </ul>
     </li>
+    <li class="{{setSidebarActive(['admin.experience.*'])}}"><a class="nav-link" href="{{route('admin.experience.index')}}"><i class="far fa-square"></i> <span>Experience</span></a></li>
     </ul>
   </aside>
 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Experience;
 use App\Models\Hero;
 use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
@@ -32,13 +33,13 @@ class HomeController extends Controller
         $typerTitles=TyperTitle::all();
         $skill = SkillSectionSetting::first();
         $skillItems = SkillItem::all();
-        // $experience = Experienace::first();
+        $experience = Experience::first();
         // $feedbacks = Feedback::all();
         // $feedbackTitle = FeedbackSectionSetting::first();
         // $blogs = Blog::latest()->take(5)->get();
         // $blogTitle = BlogSectionSetting::first();
         // $contactTitle = ContactSectionSetting::first();
-        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories','portfolioItems','portfolioTitle','skillSection','skillItems','skill'));
+        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories','portfolioItems','portfolioTitle','skillSection','skillItems','skill','experience'));
     }
     public function showPortfolio($id){
         $portfolio = PortfolioItem::findOrFail($id);

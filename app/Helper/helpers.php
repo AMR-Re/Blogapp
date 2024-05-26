@@ -46,13 +46,13 @@ function deleteFileIfExist($filePath){
 // }
 
 function getColor() {
-    // Generate random HSL color values
-    $hue = rand(0, 359);
-    $saturation = rand(50, 100) . '%';
-    $lightness = rand(50, 100) . '%';
-  
-    // Create the HSL color string
-    $color = "hsl($hue, $saturation, $lightness)";
+    // Generate random HSL color values (excluding white)
+    do {
+      $hue = rand(0, 359);
+      $saturation = rand(50, 100) . '%';
+      $lightness = rand(1, 90) . '%'; // Ensure lightness is not 100 (white)
+      $color = "hsl($hue, $saturation, $lightness)";
+    } while ($lightness === '100%'); // Repeat until lightness is not white
   
     return $color;
   }

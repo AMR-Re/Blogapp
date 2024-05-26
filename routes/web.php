@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
@@ -68,6 +69,51 @@ Route::resource('skill-section-setting', SkillSectionSettingController::class);
 
 /** Skill Section Item Route */
 Route::resource('skill-item', SkillItemController::class);
+
+ /** Skill Items Route */
+ Route::resource('experience', ExperienceController::class);
+
+ /** Feedback Route */
+//  Route::resource('feedback', FeedbackController::class);
+
+//  /** Feedback Section Setting Route */
+//  Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
+
+//  /** Blog Category Route */
+//  Route::resource('blog-category', BlogCategoryController::class);
+
+//  /** Blog Route */
+//  Route::resource('blog', BlogController::class);
+
+//  /** Blog Section Setting Route */
+//  Route::resource('blog-section-setting', BlogSectionSettingController::class);
+
+//  /** Contact Section Setting Route */
+//  Route::resource('contact-section-setting', ContactSectionSettingController::class);
+
+//  /** Footer Social Route */
+//  Route::resource('footer-social', FooterSocialLinkController::class);
+
+//  /** Footer Info Route */
+//  Route::resource('footer-info', FooterInfoController::class);
+
+//  /** Footer Contact Info Route */
+//  Route::resource('footer-contact-info', FooterContactInfoController::class);
+
+//  /** Footer Useful Links Route */
+//  Route::resource('footer-useful-links', FooterUsefulLinkController::class);
+
+//  /** Footer Help Links Route */
+//  Route::resource('footer-help-links', FooterHelpLinkController::class);
+
+//  /** Settings Route */
+//  Route::get('settings', SettingController::class)->name('settings.index');
+
+//  /** General setting Route */
+//  Route::resource('general-setting', GeneralSettingController::class);
+
+//  /** Seo setting Route */
+//  Route::resource('seo-setting', SeoSettingController::class);
 });
 
 require __DIR__.'/auth.php';
