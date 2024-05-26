@@ -67,6 +67,17 @@
               <li class="{{setSidebarActive(['admin.portfolio-section-setting.*'])}}"><a class="nav-link" href="{{route('admin.portfolio-section-setting.index')}}">Section Setting</a></li>
           </ul>
       </li>
+      
+      <li class="nav-item dropdown {{setSidebarActive([
+        'admin.skill-item.*',
+        'admin.skill-section-setting.*',
+        ])}}">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Skill</span></a>
+        <ul class="dropdown-menu" style="display: none;">
+          <li class="{{setSidebarActive(['admin.skill-item.*'])}}"><a class="nav-link" href="{{route('admin.skill-item.index')}}">Skill Items</a></li>
+          <li class="{{setSidebarActive(['admin.skill-section-setting.*'])}}"><a class="nav-link" href="{{route('admin.skill-section-setting.index')}}">Section Setting</a></li>
+        </ul>
+    </li>
     </ul>
   </aside>
 </div>

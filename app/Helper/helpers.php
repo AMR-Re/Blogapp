@@ -39,12 +39,23 @@ function deleteFileIfExist($filePath){
 
 /** get dynamic colors  */
 
-function getColor($index){
-    $colors = ['#558bff', '#fecc90', '#ff885e', '#282828', '#190844', '#9dd3ff'];
+// function getColor($index){
+//     $colors = ['#558bff', '#fecc90', '#ff885e', '#282828', '#190844', '#9dd3ff'];
 
-    return $colors[$index % count($colors)];
-}
+//     return $colors[$index % count($colors)];
+// }
 
+function getColor() {
+    // Generate random HSL color values
+    $hue = rand(0, 359);
+    $saturation = rand(50, 100) . '%';
+    $lightness = rand(50, 100) . '%';
+  
+    // Create the HSL color string
+    $color = "hsl($hue, $saturation, $lightness)";
+  
+    return $color;
+  }
 /** Set Sidebar Active  */
 
 function setSidebarActive($route){

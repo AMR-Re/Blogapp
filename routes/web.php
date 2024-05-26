@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SkillItemController;
+use App\Http\Controllers\Admin\SkillSectionSettingController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -61,8 +63,11 @@ Route::resource('category', CategoryController::class);
 /** Portfolio Section Setting Route */
 Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
 
+/** Skill Section Setting Route */
+Route::resource('skill-section-setting', SkillSectionSettingController::class);
 
-
+/** Skill Section Item Route */
+Route::resource('skill-item', SkillItemController::class);
 });
 
 require __DIR__.'/auth.php';
