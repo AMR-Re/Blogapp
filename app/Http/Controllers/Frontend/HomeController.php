@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Experience;
+use App\Models\Feedback;
+use App\Models\FeedbackSectionSetting;
 use App\Models\Hero;
 use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
@@ -34,12 +36,12 @@ class HomeController extends Controller
         $skill = SkillSectionSetting::first();
         $skillItems = SkillItem::all();
         $experience = Experience::first();
-        // $feedbacks = Feedback::all();
-        // $feedbackTitle = FeedbackSectionSetting::first();
+         $feedbacks = Feedback::all();
+        $feedbackTitle = FeedbackSectionSetting::first();
         // $blogs = Blog::latest()->take(5)->get();
         // $blogTitle = BlogSectionSetting::first();
         // $contactTitle = ContactSectionSetting::first();
-        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories','portfolioItems','portfolioTitle','skillSection','skillItems','skill','experience'));
+        return view('frontend.home',compact('hero','typerTitles','services','about','portfolioCategories','portfolioItems','portfolioTitle','skillSection','skillItems','skill','experience','feedbacks','feedbackTitle'));
     }
     public function showPortfolio($id){
         $portfolio = PortfolioItem::findOrFail($id);

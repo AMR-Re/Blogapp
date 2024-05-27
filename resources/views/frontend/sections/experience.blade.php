@@ -11,6 +11,7 @@
                     <h3 class="title wow fadeInUp" data-wow-delay="0.3s">{{$experience->title}}</h3>
                     <div class="desc wow fadeInUp" data-wow-delay="0.4s">
                         {!!$experience->description!!}
+                        
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
