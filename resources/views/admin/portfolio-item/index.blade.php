@@ -20,7 +20,7 @@
                 <a href="{{route('admin.portfolio-item.create')}}" class="btn btn-success">Create New <i class="fas fa-plus"></i></a>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body"  style="overflow: auto;">
                 {{ $dataTable->table() }}
             </div>
           </div>

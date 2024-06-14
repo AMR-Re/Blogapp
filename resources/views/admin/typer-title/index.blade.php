@@ -23,7 +23,7 @@
                 </div>
              
               </div>
-              <div class="card-body">
+              <div class="card-body"  style="overflow: auto;">
                 {{ $dataTable->table() }}
             </div>
           </div>

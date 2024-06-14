@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\BlogSectionSettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceController;
@@ -30,6 +33,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
+Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
+Route::get('blogs', [HomeController::class, 'blog'])->name('blog');
+Route::get('contacts', [HomeController::class, 'contact'])->name('contact');
+
+
 Route::get('/blog', function () {
     return view('frontend.blog');
 });
@@ -82,13 +90,13 @@ Route::resource('skill-item', SkillItemController::class);
   Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
 
 //  /** Blog Category Route */
-//  Route::resource('blog-category', BlogCategoryController::class);
+ Route::resource('blog-category', BlogCategoryController::class);
 
 //  /** Blog Route */
-//  Route::resource('blog', BlogController::class);
+ Route::resource('blog', BlogController::class);
 
 //  /** Blog Section Setting Route */
-//  Route::resource('blog-section-setting', BlogSectionSettingController::class);
+ Route::resource('blog-section-setting', BlogSectionSettingController::class);
 
 //  /** Contact Section Setting Route */
 //  Route::resource('contact-section-setting', ContactSectionSettingController::class);
